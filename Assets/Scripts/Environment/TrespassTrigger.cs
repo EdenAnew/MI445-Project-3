@@ -10,25 +10,19 @@ public class TrespassTrigger : Scorable
 
     [Tooltip("How much time needs to elapse before scoring")]
     [SerializeField] float timeUntilPointsScored = 3;
-    bool trespassing = false;
+
     float timer = 0;
 
-    // Update is called once per frame
-    void Update()
-    {
-        timer += Time.deltaTime;
-        if (trespassing && timer >= timeUntilPointsScored)
-        {
-            Score();
-            timer = 0;
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
-            trespassing = true;
+            timer += Time.deltaTime;
+            if(timer >= timeUntilPointsScored)
+            {
+                Score();
+                timer = 0;
+            }
         }
     }
 
@@ -36,7 +30,6 @@ public class TrespassTrigger : Scorable
     {
         if (other.tag == "Player")
         {
-            trespassing = false;
             timer = 0;
         }
     }

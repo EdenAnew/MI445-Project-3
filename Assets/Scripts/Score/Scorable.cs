@@ -29,8 +29,13 @@ public abstract class Scorable : MonoBehaviour
     // Every scorable will need an info container
     public abstract ScoreInfo ScoringInfo { get; }
 
+    // The event used to broadcast that our scorable scored
     public event System.Action<ScoreInfo> OnScored;
 
+
+    /// <summary>
+    /// Broadcast that this object has scored, using info from ScoringInfo 
+    /// </summary>
     virtual protected void Score()
     {
         OnScored?.Invoke(ScoringInfo);
@@ -38,11 +43,13 @@ public abstract class Scorable : MonoBehaviour
 
     virtual protected void OnEnable()
     {
+        // Subscribes the ScoreManager to our event
         ScoreManager.instance?.SubscribeToScorable(this);
     }
 
     virtual protected void OnDisable()
     {
+        // Unsubscribes the ScoreManager to our event
         ScoreManager.instance?.UnsubscribeToScorable(this);
     }
 }
