@@ -6466,9 +6466,9 @@ MonoBehaviour:
   camPos: {fileID: 908068529}
   collisionDetection:
     serializedVersion: 2
-    m_Bits: 183
-  offset: 5
-  lookSpeed: 3
+    m_Bits: 55
+  offset: 2
+  lookSpeed: 6
 --- !u!114 &824069989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6497,7 +6497,7 @@ GameObject:
   - component: {fileID: 855400034}
   - component: {fileID: 855400033}
   - component: {fileID: 855400032}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MyFriendTheCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6534,7 +6534,7 @@ MonoBehaviour:
   localDescriptionText: My Friend The Cube
   rb: {fileID: 0}
   throwMultiplier: 10
-  upForceMultiplier: 3
+  upForceMultiplier: 4
 --- !u!54 &855400033
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7257,6 +7257,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1398680035229741051, guid: 37b30786c6247ed4e9e30bcc75ebaf7b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3079959847313645631, guid: 37b30786c6247ed4e9e30bcc75ebaf7b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7297,9 +7301,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7095471284012725076, guid: 37b30786c6247ed4e9e30bcc75ebaf7b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7235078044153075667, guid: 37b30786c6247ed4e9e30bcc75ebaf7b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7277694511423696242, guid: 37b30786c6247ed4e9e30bcc75ebaf7b, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277694511423696242, guid: 37b30786c6247ed4e9e30bcc75ebaf7b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097296764137789741, guid: 37b30786c6247ed4e9e30bcc75ebaf7b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8766720898049188039, guid: 37b30786c6247ed4e9e30bcc75ebaf7b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
