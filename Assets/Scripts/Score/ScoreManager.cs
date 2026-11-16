@@ -20,22 +20,14 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Subscribes to a Scorable's event(s)
-    /// </summary>
-    /// <param name="scorable">The scorable to subscribe from</param>
-    public void SubscribeToScorable(Scorable scorable)
+    private void OnEnable()
     {
-        scorable.OnScored += AddScore;
+        Scorable.OnScored += AddScore;
     }
 
-    /// <summary>
-    /// Unsubscribes to a Scorable's event(s)
-    /// </summary>
-    /// <param name="scorable">The scorable to unsubscribe from</param>
-    public void UnsubscribeToScorable(Scorable scorable)
+    private void OnDisable()
     {
-        scorable.OnScored -= AddScore;
+        Scorable.OnScored -= AddScore;
     }
 
     /// <summary>
@@ -43,7 +35,7 @@ public class ScoreManager : MonoBehaviour
     /// Broadcasts local score event and total score to UI.
     /// </summary>
     /// <param name="score">The information associated with the recent scoring object</param>
-    void AddScore(ScoreInfo score)
+    private void AddScore(ScoreInfo score)
     {
         string crimeText = score.crime ? " a crime " : " not a crime, but it was ";
         Debug.Log("SCORED! " + score.description + " was" + crimeText + "worth " + score.points + " points!");

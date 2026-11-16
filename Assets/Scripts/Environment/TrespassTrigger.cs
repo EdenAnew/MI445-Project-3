@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrespassTrigger : Scorable
+[RequireComponent(typeof(Scorable))]
+public class TrespassTrigger : MonoBehaviour
 {
-    [SerializeField] ScoreInfo scoreInfo;
-    public override ScoreInfo ScoringInfo { get { return scoreInfo; } }
+    private Scorable scoringComponent;
 
 
     [Tooltip("How much time needs to elapse before scoring")]
@@ -13,14 +13,21 @@ public class TrespassTrigger : Scorable
 
     float timer = 0;
 
+    private void Start()
+    {
+        scoringComponent = GetComponent<Scorable>();
+    }
+
     private void OnTriggerStay(Collider other)
     {
+        // If player is in our trigger
         if (other.tag == "Player")
         {
+            // Increment time until a scoring event
             timer += Time.deltaTime;
             if(timer >= timeUntilPointsScored)
             {
-                Score();
+                scoringComponent.Score();
                 timer = 0;
             }
         }
