@@ -21,7 +21,14 @@ public class Throwable : MonoBehaviour, I_Interactable
     [Tooltip("The amount of upward force you'd like for this to have when thrown")]
     float upForceMultiplier;
 
-    void Start()
+    private bool held;
+    protected virtual bool CurrentlyHeld
+    {
+        get { return held; }
+        set { held = value; }
+    }
+
+    virtual protected void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
@@ -33,6 +40,7 @@ public class Throwable : MonoBehaviour, I_Interactable
         {
             rb.isKinematic = true;
             throwScript.AttachObject(this);
+            CurrentlyHeld = true;
         }
     }
 
@@ -47,6 +55,7 @@ public class Throwable : MonoBehaviour, I_Interactable
     public void Drop()
     {
         rb.isKinematic = false;
+        CurrentlyHeld = false;
     }
 
     /// <summary>
@@ -56,5 +65,6 @@ public class Throwable : MonoBehaviour, I_Interactable
     {
         rb.isKinematic = false;
         rb.AddForce(throwDirection * throwMultiplier + Vector3.up * upForceMultiplier, ForceMode.Impulse);
+        CurrentlyHeld = false;
     }
 }

@@ -43,7 +43,5 @@ public class ScoreManager : MonoBehaviour
         totalScore += score.points;
 
         Debug.Log("Current total score: " + totalScore);
-
-        // IM GOING TO MAKE AN EVENT BUS FOR UI WHERE ILL BROADCAST THE TOTAL SCORE + LOCAL SCORE
     }
 }

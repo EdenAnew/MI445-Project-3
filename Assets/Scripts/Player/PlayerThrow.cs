@@ -10,7 +10,6 @@ public class PlayerThrow : MonoBehaviour
 
     [Tooltip("What layers can our attached throwable object collide with")]
     public LayerMask collisionDetection;
-    
 
     [SerializeField]
     [Tooltip("The offset distance our throwable object will be held from the player")]
