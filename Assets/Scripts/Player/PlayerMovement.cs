@@ -184,7 +184,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(wasGrounded) currentGrav = defaultGrav;
         else if (Mathf.Abs(yVel) < lingeringAirWindow) currentGrav = lingerAtApexGravity; //If their yVelocity is lower than the linger window velocity, we assume its the apex of their jump and change grav
-        else if (yVel < 0) currentGrav = risingGravity; //if YVelo is <0 is means they are rising
+        else if (yVel > 0) currentGrav = risingGravity; //if YVelo is <0 is means they are rising
         else currentGrav = fallingGravity; //otherwise we know the player is falling
 
         rb.AddForce(Physics.gravity * currentGrav, ForceMode.Acceleration);
