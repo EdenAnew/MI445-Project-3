@@ -43,6 +43,7 @@ public class PlayerView : MonoBehaviour
     private void Awake()
     {
         inputMap = new InputMap();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Start()

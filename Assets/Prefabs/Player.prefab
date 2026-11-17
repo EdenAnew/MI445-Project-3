@@ -319,8 +319,8 @@ MonoBehaviour:
   lookSensitivity: 4
   topViewBoundary: 85
   bottomViewBoundary: 75
-  lookTiltMagnitude: 12
-  lookTiltSpeed: 5
+  lookTiltMagnitude: 2.2
+  lookTiltSpeed: 3
   dynamicFOVMagnitude: 12
   dashFOVSpeed: 3.5
 --- !u!54 &5155898100491129163
