@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpImpulse = 5.0f;
     [Tooltip("Impacts the ramp-up to reach full speed, as well as stopping and turning responsiveness; values above .4 are severely sluggish")]
     [SerializeField] private float momentum = 0.2f;
+    [Tooltip("How long player has to press 'Jump' after leaving ground")]
+    [SerializeField] float coyoteTimeGracePeriod;
 
     [Header("Parameters - Gravity")]
     [Tooltip("Gravity while player is rising; mix w/ jump impulse to effect rising feel. Typically this will be higher to reduce 'floatyness', combined w/ jump force to get desired height")]
@@ -55,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
     private float fovAdded = 0f;
     private Vector2 movementInputVector = Vector2.zero;
     private Vector3 calculatedVelocity = Vector3.zero;
+    float coyoteTimer;
 
     private InputMap inputMap;
     private InputAction movementInput;
@@ -74,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         aSource = GetComponent<AudioSource>();
         rb.useGravity = false;
+        coyoteTimer = coyoteTimeGracePeriod;
     }
 
     private void OnEnable()
@@ -102,12 +106,14 @@ public class PlayerMovement : MonoBehaviour
     {
         UpdateMovementInputs();
         UpdateFootsteps();
+
     }
 
     private void FixedUpdate()
     {
         UpdateMovementPhysics();
         Gravity();
+        if (!wasGrounded) coyoteTimer -= Time.fixedDeltaTime;
     }
 
     private void UpdateMovementInputs()
@@ -115,9 +121,10 @@ public class PlayerMovement : MonoBehaviour
         // check inputs
         sprinting = sprintInput.IsPressed();
         movementInputVector = movementInput.ReadValue<Vector2>();
-        if (jumpInput.WasPressedThisFrame() && groundSensor.isGrounded)
+        if (jumpInput.WasPressedThisFrame() && coyoteTimer > 0)
         {
             jumping = true;
+            coyoteTimer = 0;
             aSource.PlayOneShot(soundJump);
         }
         // calculate movement direction, normalize, then multiply by walk/sprint speed
@@ -168,6 +175,7 @@ public class PlayerMovement : MonoBehaviour
         else if (!wasGrounded && groundSensor.isGrounded) // hitting ground
         {
             if (timeLastGrounded + timeMinForLandingSound <= Time.fixedTime) aSource.PlayOneShot(soundLand);
+            coyoteTimer = coyoteTimeGracePeriod;
             wasGrounded = true;
         }
         // lerp horizontal velocity between current and new
@@ -184,7 +192,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(wasGrounded) currentGrav = defaultGrav;
         else if (Mathf.Abs(yVel) < lingeringAirWindow) currentGrav = lingerAtApexGravity; //If their yVelocity is lower than the linger window velocity, we assume its the apex of their jump and change grav
-        else if (yVel > 0) currentGrav = risingGravity; //if YVelo is <0 is means they are rising
+        else if (yVel > 0) currentGrav = risingGravity; //if YVelo is > 0 is means they are rising
         else currentGrav = fallingGravity; //otherwise we know the player is falling
 
         rb.AddForce(Physics.gravity * currentGrav, ForceMode.Acceleration);

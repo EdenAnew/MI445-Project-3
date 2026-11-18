@@ -296,6 +296,7 @@ MonoBehaviour:
   sprintMult: 1.75
   jumpImpulse: 12
   momentum: 0.1
+  coyoteTimeGracePeriod: 0.15
   risingGravity: 4
   fallingGravity: 6
   lingerAtApexGravity: 0.9
