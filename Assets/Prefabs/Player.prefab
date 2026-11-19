@@ -292,13 +292,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5a37cfa87cef0cde7ab010b1eda374d8, type: 3}
   soundJump: {fileID: 8300000, guid: b64b27704dded8814bad8886e4435d67, type: 3}
   soundLand: {fileID: 8300000, guid: 3170694e815b20396b0817db214a9d26, type: 3}
-  walkSpeed: 6.5
+  walkSpeed: 9
   jumpImpulse: 12
   momentum: 0.1
   coyoteTimeGracePeriod: 0.15
   dashSpeed: 15
   dashDuration: 0.5
   dashcooldown: 0.1
+  maxCharges: 3
   currentDashCharges: 1
   risingGravity: 4
   fallingGravity: 6
