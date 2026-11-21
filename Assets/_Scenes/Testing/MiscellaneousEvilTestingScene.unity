@@ -593,6 +593,7 @@ GameObject:
   - component: {fileID: 465089116}
   - component: {fileID: 465089115}
   - component: {fileID: 465089119}
+  - component: {fileID: 465089120}
   m_Layer: 0
   m_Name: TrespassTrigger
   m_TagString: Untagged
@@ -715,6 +716,18 @@ MonoBehaviour:
     description: Trespassing
     crime: 1
   timeUntilScore: 1
+--- !u!114 &465089120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465089113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e23cb47846d3c54f9c4a1d147025440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &469225757
 GameObject:
   m_ObjectHideFlags: 0
@@ -6499,6 +6512,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camPos: {fileID: 908068529}
   interactDistance: 5
+--- !u!114 &824069990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824069982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d02f5cc62d45514ba0cc1702bfd1e38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &855400030
 GameObject:
   m_ObjectHideFlags: 0
@@ -7517,6 +7542,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7277694511423696242, guid: 37b30786c6247ed4e9e30bcc75ebaf7b, type: 3}
       insertIndex: 5
       addedObject: {fileID: 824069988}
+    - targetCorrespondingSourceObject: {fileID: 7277694511423696242, guid: 37b30786c6247ed4e9e30bcc75ebaf7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 824069990}
   m_SourcePrefab: {fileID: 100100000, guid: 37b30786c6247ed4e9e30bcc75ebaf7b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

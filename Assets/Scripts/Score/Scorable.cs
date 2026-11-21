@@ -25,7 +25,6 @@ public class Scorable : MonoBehaviour
     [HideInInspector]
     public static event System.Action<ScoreInfo> OnScored;
 
-
     /// <summary>
     /// Broadcast that this object has scored, using info from ScoringInfo 
     /// </summary>
