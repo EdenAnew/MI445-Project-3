@@ -14,8 +14,8 @@ public class PlayerEventListener : MonoBehaviour
         Crime.OnCrimeCommitted -= RechargeDash;
     }
 
-    void RechargeDash()
+    void RechargeDash(CrimeInfo info)
     {
-        Debug.Log("It's all hooked up!");
+        Debug.Log("It's all hooked up! Looks like you committed " + (info.main ? "a main crime." : "a minor crime."));
     }
 }

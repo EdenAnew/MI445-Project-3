@@ -13,9 +13,13 @@ public struct CrimeInfo
 
 public class Crime : MonoBehaviour
 {
+    [Tooltip("All the info that will be sent out when this crime is committed")]
+    [SerializeField] CrimeInfo _crimeInfo;
+    public CrimeInfo CrimeInfo { get { return _crimeInfo; } }
+
     // The event used to broadcast that our crime was committed
     [HideInInspector]
-    public static event System.Action OnCrimeCommitted;
+    public static event System.Action<CrimeInfo> OnCrimeCommitted;
 
     // This boolean disables the crime from being committed.
     // I chose to have this bool instead of calling Destroy() so that
@@ -32,7 +36,7 @@ public class Crime : MonoBehaviour
     {
         if (disabled) return;
 
-        OnCrimeCommitted?.Invoke();
+        OnCrimeCommitted?.Invoke(CrimeInfo);
         disabled = true;
     }
 }
