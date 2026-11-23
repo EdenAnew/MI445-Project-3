@@ -19,6 +19,14 @@ public class PlayerThrow : MonoBehaviour
     [Tooltip("How fast will our throwable object follow our camera (adds a little drag)")]
     float lookSpeed;
 
+    // Eases rotation towards the cameras rotation
+    Quaternion smoothedRot;
+    // Eases distance towards the fixed distance
+    float smoothedDist;
+
+    // Used for rudamentary collider fixes when an object is detached
+    bool insideOfSomething = false;
+
     Throwable attachedThrow;
     private PlayerInteractor playerInteractor;
     bool interactPressed, throwPressed;
@@ -38,7 +46,6 @@ public class PlayerThrow : MonoBehaviour
     {
         if(attachedThrow != null)
         {
-            HandleHoldMovement();
             if (interactPressed)
             {
                 attachedThrow.Drop();
@@ -51,6 +58,12 @@ public class PlayerThrow : MonoBehaviour
                 DetachObject();
             }
         }
+    }
+
+    private void LateUpdate()
+    {
+        if (attachedThrow != null)
+            HandleHoldMovement();
     }
 
     /// <summary>
@@ -75,11 +88,22 @@ public class PlayerThrow : MonoBehaviour
         if(Physics.Raycast(camPos.transform.position, camPos.transform.TransformDirection(Vector3.forward), out hit, offset, collisionDetection))
         {
             fixDistance = hit.distance;
+            insideOfSomething = true;
+        }
+        else
+        {
+            insideOfSomething = false;
         }
 
-        Debug.DrawRay(camPos.transform.position, camPos.transform.TransformDirection(Vector3.forward) * fixDistance, Color.white);
-        Vector3 holdPos = camPos.transform.position + camPos.transform.TransformDirection(Vector3.forward) * fixDistance;
-        attachedThrow.rb.MovePosition(Vector3.Lerp(attachedThrow.gameObject.transform.position, holdPos, Time.fixedDeltaTime * lookSpeed));
+        // Eases rotation towards the cameras rotation
+        smoothedRot = Quaternion.Slerp(smoothedRot, camPos.transform.rotation, lookSpeed * Time.deltaTime);
+        // Eases distance between the camera and the held object towards the fixed distance
+        smoothedDist = Mathf.Min(fixDistance, Mathf.Lerp(smoothedDist, fixDistance, lookSpeed * Time.deltaTime));
+
+        // The held position is somewhere along where the camera actually sits, modified by the smoothed values
+        Vector3 holdPos = camPos.transform.position + smoothedRot * Vector3.forward * smoothedDist;
+
+        attachedThrow.transform.position = holdPos;
     }
 
     /// <summary>
@@ -90,6 +114,9 @@ public class PlayerThrow : MonoBehaviour
         attachedThrow = attach;
         playerInteractor.enabled = false;
         Physics.IgnoreLayerCollision(3, 7, true);
+        
+        smoothedRot = camPos.transform.rotation;
+        smoothedDist = Vector3.Distance(camPos.transform.position, attachedThrow.transform.position);
     }
 
     /// <summary>
@@ -97,6 +124,11 @@ public class PlayerThrow : MonoBehaviour
     /// </summary>
     public void DetachObject()
     {
+        if(insideOfSomething)
+        {
+            attachedThrow.rb.AddForce(transform.position, ForceMode.Impulse);
+            insideOfSomething = false;
+        }
         attachedThrow = null;
         playerInteractor.enabled = true;
         Physics.IgnoreLayerCollision(3, 7, false);
