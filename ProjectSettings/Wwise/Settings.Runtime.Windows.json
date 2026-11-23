@@ -1,0 +1,15 @@
+{
+  "Version": 1,
+  "Namespaces": [
+    {
+      "Name": "IntegrationBanks",
+      "Options": [
+        {
+          "Name": "LoadBanksAsynchronously",
+          "Type": "Boolean",
+          "DefaultValue": true
+        }
+      ]
+    }
+  ]
+}

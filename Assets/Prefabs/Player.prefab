@@ -306,7 +306,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1477994691989187598}
   - component: {fileID: 6226651274135113990}
-  - component: {fileID: 8371474741591944379}
+  - component: {fileID: 1177488175506933315}
+  - component: {fileID: 3254578652652403464}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -380,14 +381,46 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &8371474741591944379
-AudioListener:
+--- !u!114 &1177488175506933315
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7235078044153075667}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65af455ad263744487cd7315d67cae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 0
+  isStaticObject: 0
+  usePositionOffsetData: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  scalingFactor: 1
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
+--- !u!114 &3254578652652403464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7235078044153075667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9be7d72eec5697a4a9f6ebe32f35838a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  bOverrideScalingFactor: 0
+  scalingFactor: -1
+  listenerId: 0
 --- !u!1 &7277694511423696242
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,9 +487,9 @@ MonoBehaviour:
   coyoteTimeGracePeriod: 0.15
   dashSpeed: 15
   dashDuration: 0.5
-  dashcooldown: 0.1
-  maxCharges: 3
-  currentDashCharges: 1
+  dashcooldown: 0
+  maxDashCharges: 3
+  currentDashCharges: 3
   risingGravity: 4
   fallingGravity: 6
   lingerAtApexGravity: 0.9
