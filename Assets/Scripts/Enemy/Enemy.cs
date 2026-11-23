@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float wanderRange = 10f;
 
+    bool knowsWhereThePlayerIsForever = false;
+
     [SerializeField]
     private float knockoutTime;
     private float updatesInSamePos = 0f, updatesAllowedToBeTheSamePos = 25f;
@@ -66,8 +68,8 @@ public class Enemy : MonoBehaviour
     void HandleMovement()
     {
         PreventBeingStuck();
-
-        if (LineOfSight() || continueTracking)
+        
+        if (knowsWhereThePlayerIsForever || continueTracking || LineOfSight())
             FollowTarget();
         else if (lastKnownPosition != Vector3.zero && !LastKnownLocationReached() && updatesInSamePos < updatesAllowedToBeTheSamePos)
             NavigateToNonTarget(lastKnownPosition);
@@ -213,5 +215,23 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Add player killer
+    }
+
+    /// <summary>
+    /// Gives the enemy permanent player awareness
+    /// </summary>
+    void GainPlayerAwareness()
+    {
+        knowsWhereThePlayerIsForever = true;
+    }
+
+    private void OnEnable()
+    {
+        GameManager.OnEnemyAwarenessTimer += GainPlayerAwareness;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnEnemyAwarenessTimer -= GainPlayerAwareness;
     }
 }
