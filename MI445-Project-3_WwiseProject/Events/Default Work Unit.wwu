@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{84A7AC94-8206-41DF-B49D-E1537BD024BF}" SchemaVersion="139">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{84A7AC94-8206-41DF-B49D-E1537BD024BF}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="walking" ID="{1D8F01BB-1F6E-4AB7-865B-F26110128F0B}">
+					<ChildrenList>
+						<Action Name="" ID="{54BB7585-5797-465B-8FF4-4356D1ACD9CE}" ShortID="409162149">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="WalkSFX" ID="{645E8648-797C-46FA-9F5E-5F0A0DD4D9FC}" WorkUnitID="{46CFBF8B-60E1-4453-93B2-279B64F3DA3C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

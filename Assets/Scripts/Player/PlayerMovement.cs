@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("Make this >0 if we want to have a buffer time between dashes. If == 0 then player can dash as soon as their previous dash is over. Likely feels better if this is set to a low number like .1f")]
     [SerializeField] float dashcooldown = .4f;
     [Tooltip("This doesn't do anything until I implement regaining dash charges")]
-    [SerializeField]int maxCharges = 3;
+    [SerializeField]int maxDashCharges = 3;
     [SerializeField] int currentDashCharges = 1;
 
     [Header("Parameters - Gravity")]
@@ -173,7 +173,7 @@ public class PlayerMovement : MonoBehaviour
         else if (timeLastFootstep + timeBetweenFootsteps <= Time.time)
         {
             timeLastFootstep = Time.time;
-            aSource.PlayOneShot(soundFootsteps[indexFootstep]);
+            AkUnitySoundEngine.PostEvent("walking", gameObject);
             indexFootstep = (indexFootstep + 1 >= soundFootsteps.Length) ? 0 : indexFootstep + 1;
         }
     }
@@ -238,5 +238,10 @@ public class PlayerMovement : MonoBehaviour
         dashing = true;
         dashStartTime = Time.time;
         nextDashTime = Time.time + dashcooldown;
+    }
+
+    public void RegainDashCharge()
+    {
+        Mathf.Clamp(currentDashCharges++, 0, maxDashCharges);
     }
 }

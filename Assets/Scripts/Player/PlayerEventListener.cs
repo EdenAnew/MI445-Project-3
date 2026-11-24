@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class PlayerEventListener : MonoBehaviour
 {
+    PlayerMovement pMovement;
+
+    private void Start()
+    {
+        pMovement = GetComponent<PlayerMovement>();
+    }
+
     private void OnEnable()
     {
         Crime.OnCrimeCommitted += RechargeDash;
@@ -16,6 +23,7 @@ public class PlayerEventListener : MonoBehaviour
 
     void RechargeDash(CrimeInfo info)
     {
-        Debug.Log("It's all hooked up! Looks like you committed " + (info.main ? "a main crime." : "a minor crime."));
+        Debug.Log("Looks like you committed " + (info.main ? "a main crime." : "a minor crime."));
+        pMovement.RegainDashCharge();
     }
 }
