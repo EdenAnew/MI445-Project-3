@@ -473,6 +473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerView: {fileID: 5069951242918026343}
   groundSensor: {fileID: 6667155289256634709}
+  groundSensorGO: {fileID: 8097296764137789741}
   soundFootsteps:
   - {fileID: 8300000, guid: 2cbaf3e4d8ff214daabec86adb0d071d, type: 3}
   - {fileID: 8300000, guid: ae012a264a56f0124990d10e258dfb7b, type: 3}
