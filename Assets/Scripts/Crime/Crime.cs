@@ -9,6 +9,18 @@ public struct CrimeInfo
 {
     [Tooltip("Was this a main crime?")]
     public bool main;
+    [Tooltip("What kind of crime was this?")]
+    public CrimeType type;
+}
+
+public enum CrimeType
+{
+    DisturbingPeace,
+    Littering,
+    PropertyDestruction,
+    IllegalItem,
+    Trespassing,
+    Main
 }
 
 public class Crime : MonoBehaviour

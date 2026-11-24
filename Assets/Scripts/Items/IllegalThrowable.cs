@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Crime))]
 [RequireComponent(typeof(ScorableTimed))]
 public class IllegalThrowable : Throwable
 {
