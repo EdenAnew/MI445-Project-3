@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("References - General")]
     [SerializeField] private PlayerView playerView;
     [SerializeField] private GroundSensor groundSensor;
+    [SerializeField] private GameObject groundSensorGO;
     [Header("References - Audio")]
     [SerializeField] private AudioClip[] soundFootsteps;
     [SerializeField] private AudioClip soundJump;
@@ -173,7 +174,7 @@ public class PlayerMovement : MonoBehaviour
         else if (timeLastFootstep + timeBetweenFootsteps <= Time.time)
         {
             timeLastFootstep = Time.time;
-            AkUnitySoundEngine.PostEvent("walking", gameObject);
+            AkUnitySoundEngine.PostEvent("walking", groundSensorGO);
             indexFootstep = (indexFootstep + 1 >= soundFootsteps.Length) ? 0 : indexFootstep + 1;
         }
     }
@@ -234,14 +235,14 @@ public class PlayerMovement : MonoBehaviour
         dir.y = 0;
         dashDir = dir.normalized;
 
-        currentDashCharges--;
+        ChangeDashCharge(-1);
         dashing = true;
         dashStartTime = Time.time;
         nextDashTime = Time.time + dashcooldown;
     }
 
-    public void RegainDashCharge()
+    public void ChangeDashCharge(int val)
     {
-        Mathf.Clamp(currentDashCharges++, 0, maxDashCharges);
+        Mathf.Clamp(currentDashCharges += val, 0, maxDashCharges);
     }
 }

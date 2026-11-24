@@ -24,6 +24,6 @@ public class PlayerEventListener : MonoBehaviour
     void RechargeDash(CrimeInfo info)
     {
         Debug.Log("Looks like you committed " + (info.main ? "a main crime." : "a minor crime."));
-        pMovement.RegainDashCharge();
+        pMovement.ChangeDashCharge(1);
     }
 }
