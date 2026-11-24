@@ -1,0 +1,80 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "176",
+  "SoundBanks": [
+   {
+    "Id": "1661994096",
+    "Type": "User",
+    "GUID": "{C2949CAE-BE24-4550-80C7-97E345AECE8A}",
+    "Language": "SFX",
+    "Hash": "{BA83B3D2-B923-47D6-01C4-C44B75FB5587}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SoundBank",
+    "ShortName": "SoundBank",
+    "Path": "SoundBank.bnk",
+    "Media": [
+     {
+      "Id": "153866859",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "366111__wakuwakuwakuwaku__indoor-footsteps.wav",
+      "CachePath": "C6/{C6723937-2EAA-6634-00F0-AF9203EB53C3}.wem"
+     },
+     {
+      "Id": "519934224",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "366111__wakuwakuwakuwaku__indoor-footsteps.wav",
+      "CachePath": "4C/{4C3EE219-E4FE-F470-EC63-E6C1D1EF93FE}.wem"
+     },
+     {
+      "Id": "535312636",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "366111__wakuwakuwakuwaku__indoor-footsteps.wav",
+      "CachePath": "30/{30423B41-6D91-64B1-D2E9-3EA2FDEA3CEE}.wem"
+     },
+     {
+      "Id": "874721959",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "366111__wakuwakuwakuwaku__indoor-footsteps.wav",
+      "CachePath": "49/{499AE9D7-893C-24E8-9C16-21CC199D2ABB}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "340271938",
+      "Name": "walking",
+      "ObjectPath": "\\Events\\Default Work Unit\\walking",
+      "GUID": "{1D8F01BB-1F6E-4AB7-865B-F26110128F0B}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.19478",
+      "DurationMax": "0.22009",
+      "MediaRefs": [
+       {
+        "Id": "153866859"
+       },
+       {
+        "Id": "519934224"
+       },
+       {
+        "Id": "535312636"
+       },
+       {
+        "Id": "874721959"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{5A1CF291-F033-462D-C62C-C9E8D7C17CB1}"
+ }
+}

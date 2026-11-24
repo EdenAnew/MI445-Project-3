@@ -173,7 +173,7 @@ public class PlayerMovement : MonoBehaviour
         else if (timeLastFootstep + timeBetweenFootsteps <= Time.time)
         {
             timeLastFootstep = Time.time;
-            aSource.PlayOneShot(soundFootsteps[indexFootstep]);
+            AkUnitySoundEngine.PostEvent("walking", gameObject);
             indexFootstep = (indexFootstep + 1 >= soundFootsteps.Length) ? 0 : indexFootstep + 1;
         }
     }

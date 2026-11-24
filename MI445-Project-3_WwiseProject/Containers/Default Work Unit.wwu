@@ -1,6 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{46CFBF8B-60E1-4453-93B2-279B64F3DA3C}" SchemaVersion="139">
 	<Containers>
-		<WorkUnit Name="Default Work Unit" ID="{46CFBF8B-60E1-4453-93B2-279B64F3DA3C}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{46CFBF8B-60E1-4453-93B2-279B64F3DA3C}" PersistMode="Standalone">
+			<ChildrenList>
+				<RandomSequenceContainer Name="WalkSFX" ID="{645E8648-797C-46FA-9F5E-5F0A0DD4D9FC}" ShortID="302886952">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E2A756B-44DD-4D0B-8EEF-6A5620B591A3}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{33E5CD1B-EB7B-485E-80FC-DFF28FD93F64}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Walk_01" ID="{D24F16B4-40E9-4A66-BF13-C38DA00BC35B}" ShortID="808369520">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E2A756B-44DD-4D0B-8EEF-6A5620B591A3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{33E5CD1B-EB7B-485E-80FC-DFF28FD93F64}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="366111__wakuwakuwakuwaku__indoor-footsteps" ID="{35FFF435-EECC-4A69-907C-E6D7F834D8EF}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.74002"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.9348"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>366111__wakuwakuwakuwaku__indoor-footsteps.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="874721959"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="366111__wakuwakuwakuwaku__indoor-footsteps" ID="{35FFF435-EECC-4A69-907C-E6D7F834D8EF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Walk_02" ID="{C4F6606E-D363-4CD1-A69D-B4B991DE3A74}" ShortID="745780666">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E2A756B-44DD-4D0B-8EEF-6A5620B591A3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{33E5CD1B-EB7B-485E-80FC-DFF28FD93F64}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="366111__wakuwakuwakuwaku__indoor-footsteps" ID="{13845571-C2E9-40E7-B5A1-A5B6E6FA6EFA}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.35065"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.56595"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>366111__wakuwakuwakuwaku__indoor-footsteps.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="519934224"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="366111__wakuwakuwakuwaku__indoor-footsteps" ID="{13845571-C2E9-40E7-B5A1-A5B6E6FA6EFA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Walk" ID="{D3A49B03-611C-4E4C-9775-B196572DA42C}" ShortID="428424011">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E2A756B-44DD-4D0B-8EEF-6A5620B591A3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{33E5CD1B-EB7B-485E-80FC-DFF28FD93F64}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="366111__wakuwakuwakuwaku__indoor-footsteps" ID="{21575D52-7AB8-4E5B-8757-ACB54C3790DC}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0.11348"/>
+										<Property Name="LoopEnd" Type="Real64" Value="0.31774"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.11123"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.32219"/>
+										<Property Name="VolumeOffset" Type="Real64">
+											<ValueList>
+												<Value>2.1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>366111__wakuwakuwakuwaku__indoor-footsteps.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="153866859"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="366111__wakuwakuwakuwaku__indoor-footsteps" ID="{21575D52-7AB8-4E5B-8757-ACB54C3790DC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Walk_03" ID="{47BE4B72-BA5F-4A4C-9991-5DD29A3144A5}" ShortID="1056421259">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E2A756B-44DD-4D0B-8EEF-6A5620B591A3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{33E5CD1B-EB7B-485E-80FC-DFF28FD93F64}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="366111__wakuwakuwakuwaku__indoor-footsteps" ID="{1B2223FE-F235-4F5C-8ED3-89C70B17B8C3}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="3.27049"/>
+										<Property Name="TrimEnd" Type="Real64" Value="3.49058"/>
+										<Property Name="VolumeOffset" Type="Real64">
+											<ValueList>
+												<Value>1.1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>366111__wakuwakuwakuwaku__indoor-footsteps.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="535312636"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="366111__wakuwakuwakuwaku__indoor-footsteps" ID="{1B2223FE-F235-4F5C-8ED3-89C70B17B8C3}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+			</ChildrenList>
+		</WorkUnit>
 	</Containers>
 </WwiseDocument>
