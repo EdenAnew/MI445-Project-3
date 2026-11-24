@@ -126,7 +126,9 @@ public class PlayerThrow : MonoBehaviour
     {
         if(insideOfSomething)
         {
-            attachedThrow.rb.AddForce(transform.position, ForceMode.Impulse);
+            Debug.Log("Applied");
+            attachedThrow.rb.velocity = Vector3.zero;
+            attachedThrow.rb.AddForce(transform.position*1.5f, ForceMode.Impulse);
             insideOfSomething = false;
         }
         attachedThrow = null;

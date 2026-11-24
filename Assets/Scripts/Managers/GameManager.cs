@@ -8,14 +8,6 @@ public class GameManager: MonoBehaviour
     [SerializeField] [Tooltip("Enter the total game time in minutes here here. Enter '5.5' for 5:30 seconds")] public float gameTimeMinutes;
     private float gameTimeSeconds;
 
-    [SerializeField]
-    [Tooltip("Once this many seconds progress into the game, enemies will become permanently aware of the player's location.")]
-    private float enemyAwareOfPlayerTime = 40;
-    bool enemiesAware = false;
-
-    // The event used to broadcast that we hit the enemy time
-    public static event System.Action OnEnemyAwarenessTimer;
-
     [Header("Game Time Text")]
     public TextMeshProUGUI gameTimeText;
     [Tooltip("Starts the game timer")] public bool startGame;
@@ -37,12 +29,6 @@ public class GameManager: MonoBehaviour
                 startGame = false;
                 EndGame();
             
-            }
-            if(!enemiesAware && gameTimeMinutes * 60 - gameTimeSeconds >= enemyAwareOfPlayerTime)
-            {
-                Debug.Log("Enemies know where you are!");
-                OnEnemyAwarenessTimer?.Invoke();
-                enemiesAware = true;
             }
         }
  

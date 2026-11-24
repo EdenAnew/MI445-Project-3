@@ -220,18 +220,18 @@ public class Enemy : MonoBehaviour
     /// <summary>
     /// Gives the enemy permanent player awareness
     /// </summary>
-    void GainPlayerAwareness()
+    public void GainPlayerAwareness()
     {
         knowsWhereThePlayerIsForever = true;
     }
 
     private void OnEnable()
     {
-        GameManager.OnEnemyAwarenessTimer += GainPlayerAwareness;
+        EnemyManager.OnEnemyAwarenessTimer += GainPlayerAwareness;
     }
 
     private void OnDisable()
     {
-        GameManager.OnEnemyAwarenessTimer -= GainPlayerAwareness;
+        EnemyManager.OnEnemyAwarenessTimer -= GainPlayerAwareness;
     }
 }
