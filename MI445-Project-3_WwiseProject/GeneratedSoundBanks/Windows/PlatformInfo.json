@@ -6,11 +6,11 @@
    "Generator": "2026.1.4.9341"
   },
   "RootPaths": {
-   "ProjectRoot": "../../../../MI445-Project-3_WwiseProject",
-   "SourceFilesRoot": "../../../../MI445-Project-3_WwiseProject/.cache",
+   "ProjectRoot": "../..",
+   "SourceFilesRoot": "../../.cache",
    "SoundBanksRoot": ".",
    "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "../../../../MI445-Project-3_WwiseProject/GeneratedSoundBanks/Windows"
+   "ExternalSourcesOutputRoot": "../../../Assets/GeneratedSoundBanks/Windows"
   },
   "DefaultAlign": "16",
   "Settings": {
@@ -33,6 +33,6 @@
    "PrintObjectPath": "true",
    "PrintObjectColor": "true"
   },
-  "FileHash": "{6D1CFBCF-8115-F8C9-BE12-AE75A9AABDDC}"
+  "FileHash": "{08E07E4D-6501-D6B0-E3DD-0B1994B4314B}"
  }
 }

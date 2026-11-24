@@ -1,0 +1,9 @@
+Event	ID	Name			Wwise Object Path	Notes
+	340271938	walking			\Default Work Unit\walking	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	153866859	Walk	.cache\C6\{C6723937-2EAA-6634-00F0-AF9203EB53C3}.wem		\Containers\Default Work Unit\WalkSFX\Walk		40648
+	519934224	Walk_02	.cache\4C\{4C3EE219-E4FE-F470-EC63-E6C1D1EF93FE}.wem		\Containers\Default Work Unit\WalkSFX\Walk_02		41432
+	535312636	Walk_03	.cache\30\{30423B41-6D91-64B1-D2E9-3EA2FDEA3CEE}.wem		\Containers\Default Work Unit\WalkSFX\Walk_03		42352
+	874721959	Walk_01	.cache\49\{499AE9D7-893C-24E8-9C16-21CC199D2ABB}.wem		\Containers\Default Work Unit\WalkSFX\Walk_01		37492
+

@@ -6,11 +6,11 @@
    "Generator": "2026.1.4.9341"
   },
   "RootPaths": {
-   "ProjectRoot": "../../../../MI445-Project-3_WwiseProject",
-   "SourceFilesRoot": "../../../../MI445-Project-3_WwiseProject/.cache",
+   "ProjectRoot": "../..",
+   "SourceFilesRoot": "../../.cache",
    "SoundBanksRoot": ".",
    "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "../../../../MI445-Project-3_WwiseProject/GeneratedSoundBanks/Mac"
+   "ExternalSourcesOutputRoot": "../../../Assets/GeneratedSoundBanks/Mac"
   },
   "DefaultAlign": "16",
   "Settings": {
@@ -33,6 +33,6 @@
    "PrintObjectPath": "true",
    "PrintObjectColor": "true"
   },
-  "FileHash": "{842EBACD-E3CA-EA2E-1F24-BD49F9A3269C}"
+  "FileHash": "{FC559276-3531-70F8-5106-7B65676B790A}"
  }
 }

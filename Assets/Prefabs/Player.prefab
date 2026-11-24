@@ -496,8 +496,8 @@ MonoBehaviour:
   lingeringAirWindow: 0.3
   defaultGrav: 1
   currentGrav: 0
-  timeBetweenFootsteps: 0.6
-  delayFootstepsStart: 0.4
+  timeBetweenFootsteps: 0.4
+  delayFootstepsStart: 0.2
   timeMinForLandingSound: 0.1
   wasGrounded: 1
 --- !u!114 &5069951242918026343
