@@ -15,7 +15,7 @@ public struct CrimeInfo
 
 public enum CrimeType
 {
-    DisturbingPeace,
+    DisturbingThePeace,
     Littering,
     PropertyDestruction,
     IllegalItem,

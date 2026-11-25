@@ -5,11 +5,9 @@ using UnityEngine;
 
 public class EndLevelTrigger : MonoBehaviour
 {
-    private GameManager gameManager;
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
-        if (gameManager == null)
+        if (GameManager.instance == null)
         {
             Debug.LogError("There is no GameManager component on the scene!");
         }
@@ -19,8 +17,7 @@ public class EndLevelTrigger : MonoBehaviour
         //if the player touches the collider, it ends the game on the game managers side
         if (other.tag == "Player")
         {
-            gameManager.startGame = false;
-            gameManager.EndGame();
+            GameManager.instance?.AttemptExit();
         }
     }
 }
