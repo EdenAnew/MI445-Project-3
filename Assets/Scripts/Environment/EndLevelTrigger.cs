@@ -7,7 +7,7 @@ public class EndLevelTrigger : MonoBehaviour
 {
     void Start()
     {
-        if (GameManager.instance == null)
+        if (LevelManager.instance == null)
         {
             Debug.LogError("There is no GameManager component on the scene!");
         }
@@ -17,7 +17,7 @@ public class EndLevelTrigger : MonoBehaviour
         //if the player touches the collider, it ends the game on the game managers side
         if (other.tag == "Player")
         {
-            GameManager.instance?.AttemptExit();
+            LevelManager.instance?.AttemptExit();
         }
     }
 }

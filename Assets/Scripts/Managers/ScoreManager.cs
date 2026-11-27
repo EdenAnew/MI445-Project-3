@@ -6,6 +6,7 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance = null;
     int totalScore = 0;
+    public int TotalScore { get { return totalScore; } }
 
     // Basic singleton stuff
     private void Awake()
